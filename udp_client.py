@@ -15,7 +15,7 @@ def CheckValues(seqActual, seqExpected):
         print("Incorrect value") 
     return result
 def runClient(sValue,message,socket,address):
-    data
+    #data
     dataACK
     addr
     socket = 0
