@@ -18,7 +18,7 @@ def runClient(sValue,message,socket,address):
     #data
     #dataACK
     #addr
-    socket = 0
+    #socket = 0
     result = True
     if result == True:
         while result == True:
@@ -36,7 +36,7 @@ def runClient(sValue,message,socket,address):
     socket.close()
 
 
-runClient(0,message,socket,address)
+runClient(expectedValue,message,socket,address)
 
 # with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s: 
     
