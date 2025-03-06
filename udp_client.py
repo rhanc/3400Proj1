@@ -16,8 +16,8 @@ def CheckValues(seqActual, seqExpected):
     return result
 def runClient(sValue,message,socket,address):
     #data
-    dataACK
-    addr
+    #dataACK
+    #addr
     socket = 0
     result = True
     if result == True:
