@@ -4,6 +4,7 @@ PORT = 5000
 ExpectedSeqValue = 0
 ActualSeqValue = 0
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.bind((HOST, PORT))
 def checkValue(ExpectedSeqValue,ActualSeqValue,socket,addr):
     if ExpectedSeqValue == ActualSeqValue:
         print("Expected value found")
@@ -24,10 +25,14 @@ def runServer():
     #s.sendto(data, addr)
     checkValue(ExpectedSeqValue,ActualSeqValue,socket,addr)
 
-with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s: 
-    s.bind((HOST, PORT))
-    print(f"Listening on port {PORT}")
+print(f"Listening on port {PORT}")
 
-    while True: 
-        runServer()
+while True: 
+    runServer()
+# with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s: 
+   
+#     print(f"Listening on port {PORT}")
+
+#     while True: 
+#         runServer()
     
