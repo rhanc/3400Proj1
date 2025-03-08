@@ -32,11 +32,24 @@
  
 
 import socket
+def bindServer(s):
+   server.bind((HOST,PORT))
+def printMessage(message):
+   print(message)
+def runServer(data,addr,server):
+   while True:
+    data, addr = server.recvfrom(1024)
+    print(f"Received: '{data.decode()}' from {addr}")
 HOST = '127.0.0.1'
 PORT = 5000
+data = ""
+addr = "" 
 server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-server.bind((HOST,PORT))
-print(f"Listening on port {PORT}")
-while True:
-   data, addr = server.recvfrom(1024)
-   print(f"Received: '{data.decode()}' from {addr}")
+# server.bind((HOST,PORT))
+bindServer(server)
+# print(f"Listening on port {PORT}")
+printMessage(f"Listening on port {PORT}")
+runServer(data,addr,server)
+# while True:
+#    data, addr = server.recvfrom(1024)
+#    print(f"Received: '{data.decode()}' from {addr}")
