@@ -47,9 +47,9 @@
 
 import socket 
 
-client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+client = socket.socket(socket.AF_INET, socket.SOCK_RAW)
 HOST = '127.0.0.1'
-PORT = 0
+PORT = 5000
 addr = (HOST,PORT)
 data = "Hello"
 client.sendto(data.encode(),addr)
