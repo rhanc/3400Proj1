@@ -52,7 +52,7 @@ def runClient(seqNum, text,data,client):
     while count < 5:
         seqNum = seqNum + 1
         text = f"Server Data: "+str(seqNum)
-        data = struct.pack(str(seqNum))+text.encode()
+        data = struct.pack("!I",seqNum)+text.encode()
         print("Complete. Sequence Number: "+str(seqNum))
 seqNum = ""
 client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
