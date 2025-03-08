@@ -47,7 +47,7 @@
 
 import socket 
 
-client = socket.socket(socket.AF_INET, socket.SOCK_RAW,0x066)
+client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
 HOST = '127.0.0.1'
 PORT = 5000
 addr = (HOST,PORT)
