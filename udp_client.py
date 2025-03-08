@@ -48,6 +48,7 @@
 import socket,time,struct
 def runClient(seqNum, text,data,client):
     count = 0
+    seqNum = 0
     while count < 5:
         seqNum = seqNum + 1
         text = f"Server Data: "+str(seqNum)
