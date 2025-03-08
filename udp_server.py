@@ -32,14 +32,25 @@
  
 
 import socket
+import struct
 def bindServer(s):
    server.bind((HOST,PORT))
 def printMessage(message):
    print(message)
+def showResult(addr, ActualSeqValue,nums):
+   print(f"Got data. Server Address: {addr} | Numbers: {ActualSeqValue} | Data: {nums.decode(errors='ignore')}")
 def runServer(data,addr,server):
+   ActualSeqValue = 0
+   nums = 0
+   result = False
    while True:
     data, addr = server.recvfrom(1024)
-    print(f"Received: '{data.decode()}' from {addr}")
+    result = (len(data)<4)
+    if result == True:
+       continue
+    ActualSeqValue,nums = struct.unpack("!I", data[:4])[0],data[4:]
+    showResult(addr, ActualSeqValue,nums)
+    #print(f"Received: '{data.decode()}' from {addr}")
 HOST = '127.0.0.1'
 PORT = 5000
 data = ""
