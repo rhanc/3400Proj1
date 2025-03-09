@@ -51,6 +51,7 @@ def runClient(seqNum, text,data,h,p):
     HOST = '127.0.0.1'
     PORT = 0
     client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
+    client.bind((HOST,PORT))
     seqNum = 0
     while count < 5:
         seqNum = seqNum + 1
