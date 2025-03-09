@@ -55,6 +55,7 @@ def runClient(seqNum, text,data,client):
         #data = struct.pack("!I",seqNum)+text.encode()
         data = text.encode()
         print("Complete. Sequence Number: "+str(seqNum))
+        count = count + 1
 seqNum = ""
 client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
 HOST = '127.0.0.1'
