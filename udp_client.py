@@ -46,9 +46,10 @@
 # # print(f"Received '{data.decode()}' from {addr}")
 
 import socket 
-def runClient(seqNum, text,data,client,h,p):
+def runClient(seqNum, text,data,h,p):
     count = 0
     seqNum = 0
+    client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
     while count < 5:
         seqNum = seqNum + 1
         text = f"Server Data: "+str(seqNum)
@@ -58,7 +59,7 @@ def runClient(seqNum, text,data,client,h,p):
         print("Complete. Sequence Number: "+str(seqNum))
         count = count + 1
 seqNum = ""
-client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
+
 HOST = '127.0.0.1'
 PORT = 0
 addr = (HOST,PORT)
