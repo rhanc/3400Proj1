@@ -64,5 +64,5 @@ HOST = '127.0.0.1'
 PORT = 0
 addr = (HOST,PORT)
 data = "Hello"
-runClient(seqNum, "",data,client,HOST,PORT)
+runClient(seqNum, "",data,HOST,PORT)
 print("Sent to server") 
