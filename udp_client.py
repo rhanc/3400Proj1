@@ -48,14 +48,16 @@
 import socket 
 def runClient(seqNum, text,data,h,p):
     count = 0
-    seqNum = 0
+    HOST = '127.0.0.1'
+    PORT = 0
     client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
+    seqNum = 0
     while count < 5:
         seqNum = seqNum + 1
         text = f"Server Data: "+str(seqNum)
         #data = struct.pack("!I",seqNum)+text.encode()
         data = text.encode()
-        client.sendto(data,(h,p))
+        client.sendto(data,(HOST,PORT))
         print("Complete. Sequence Number: "+str(seqNum))
         count = count + 1
 seqNum = ""
