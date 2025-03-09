@@ -59,7 +59,7 @@ def runClient(seqNum, text,data,client):
 seqNum = ""
 client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
 HOST = '127.0.0.1'
-PORT = 5000
+PORT = 0
 addr = (HOST,PORT)
 data = "Hello"
 runClient(seqNum, "",data,client)

@@ -52,7 +52,7 @@ def runServer(data,addr,server):
     showResult(addr, ActualSeqValue,nums)
     #print(f"Received: '{data.decode()}' from {addr}")
 HOST = '127.0.0.1'
-PORT = 5000
+PORT = 0
 data = ""
 addr = "" 
 server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
