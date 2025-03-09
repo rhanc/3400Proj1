@@ -54,7 +54,7 @@ def runClient(seqNum, text,data,client,addr):
         text = f"Server Data: "+str(seqNum)
         #data = struct.pack("!I",seqNum)+text.encode()
         data = text.encode()
-        client.sendto(data,addr)
+        client.sendto(data,(addr[0],addr[1]))
         print("Complete. Sequence Number: "+str(seqNum))
         count = count + 1
 seqNum = ""
