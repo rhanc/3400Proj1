@@ -64,3 +64,4 @@ addr = (HOST,PORT)
 data = "Hello"
 runClient(seqNum, "",data,client)
 print("Sent to server")
+time.sleep(1)
