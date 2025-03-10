@@ -1,7 +1,7 @@
 
 
 import socket 
-def runClient(seqNum, text,data,h,p):
+def runClient(seqNum, text,data):
     count = 0
     HOST = '127.0.0.1'
     PORT = 0
