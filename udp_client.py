@@ -21,5 +21,5 @@ def runClient(seqNum, text,data,h,p):
 seqNum = ""
  
 data = "Hello"
-runClient(seqNum, "",data,HOST,PORT)
+runClient(seqNum, "",data)
 print("Sent to server") 
