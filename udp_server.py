@@ -8,6 +8,7 @@ PORT = 5005
 data = ""
 addr = "" 
 server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
+server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
 def bindServer(s,HOST,PORT):
    s.bind((HOST,PORT))
 def printMessage(message):
