@@ -4,7 +4,7 @@
 import socket
 import struct
 HOST = '127.0.0.1'
-PORT = 0
+PORT = 5005
 data = ""
 addr = "" 
 server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
