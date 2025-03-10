@@ -3,7 +3,7 @@
 
 import socket
 import struct
-HOST = '127.0.0.1'
+HOST = ''
 PORT = 5000
 data = ""
 addr = "" 
