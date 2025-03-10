@@ -4,11 +4,10 @@
 import socket
 import struct
 HOST = '127.0.0.1'
-PORT = 5005
+PORT = 5050
 data = ""
 addr = "" 
-server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
-server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  
 def bindServer(s,HOST,PORT):
    s.bind((HOST,PORT))
 def printMessage(message):
