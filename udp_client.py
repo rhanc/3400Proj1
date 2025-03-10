@@ -4,7 +4,7 @@ import socket
 def runClient(seqNum, text,data,h,p):
     count = 0
     HOST = '127.0.0.1'
-    PORT = 5005
+    PORT = 0
     addr = (HOST,PORT)
     client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
     client.bind((HOST,PORT))
@@ -19,10 +19,7 @@ def runClient(seqNum, text,data,h,p):
         count = count + 1
     client.close()
 seqNum = ""
-
-HOST = '127.0.0.1'
-PORT = 0
-addr = (HOST,PORT)
+ 
 data = "Hello"
 runClient(seqNum, "",data,HOST,PORT)
 print("Sent to server") 
