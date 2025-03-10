@@ -4,7 +4,7 @@ import socket
 def runClient(seqNum, text,data):
     count = 0
     HOST = '127.0.0.1'
-    PORT = 5050
+    PORT = 6000
     addr = (HOST,PORT)
     client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
     client.bind((HOST,PORT))
