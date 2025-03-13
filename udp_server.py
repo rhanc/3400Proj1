@@ -11,6 +11,8 @@ GetData = ""
 server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  
 def bindServer(s,HOST,PORT):
    s.bind((HOST,PORT))
+   s.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR)
+   return s
 def printMessage(message):
    print(message)
 def showResult(addr, ActualSeqValue,nums):
@@ -34,6 +36,6 @@ def runServer(data,addr,server):
       ActualSeqValue,nums = struct.unpack("!I", data[:4])[0],data[4:]
    showResult(addr, ActualSeqValue,nums) 
 
-bindServer(server,HOST,PORT) 
+server = bindServer(server,HOST,PORT) 
 printMessage(f"Listening on port {PORT}")
 runServer(data,addr,server) 
