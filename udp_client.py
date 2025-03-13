@@ -26,7 +26,7 @@ def runClient(seqNum, text,data):
                 ACKData, Temp = client.recvfrom(1024)
                 ACKData = ACKData.decode()
                 ACKData = ACKData.split(":",1)
-                if ACKData == f"ACK:{seqNum}":
+                if ACKData[1] == f"ACK:{seqNum}":
                     print(f"Data packet found!")
                     break
                 else:
