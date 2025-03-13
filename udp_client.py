@@ -25,6 +25,7 @@ def runClient(seqNum, text,data):
                 print("Complete. Sequence Number: "+str(seqNum))
                 ACKData, Temp = client.recvfrom(1024)
                 ACKData = ACKData.decode()
+                ACKData = ACKData.split(":",1)
                 if ACKData == f"ACK:{seqNum}":
                     print(f"Data packet found!")
                     break
