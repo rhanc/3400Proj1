@@ -30,6 +30,8 @@ def runClient(seqNum, text,data):
                     break
                 else:
                     print(f"Data ACK found, but ACK data is incorrect")
+                    print("Actual: "+str(ACKData))
+                    print("Expected: "+str(seqNum))
             except client.timeout:
                 print("The request took too long and timedout.")
         # #data = struct.pack("!I",seqNum)+text.encode()
