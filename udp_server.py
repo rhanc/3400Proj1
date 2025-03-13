@@ -1,5 +1,4 @@
 
- 
 
 import socket
 import struct
@@ -25,11 +24,12 @@ def runServer(data,addr,server):
       data, addr = server.recvfrom(1024)
       GetData = data.decode(errors="ignore")
       try:
-         seqNum,dataResult = GetData.split(":",1)
+         packet = GetData.split(":",1)
+         dataResult, seqNum = packet[0], packet[1]
          seqNum = int(seqNum)
          print(f"Pack has been found at {addr} | sequence: {seqNum}")
-      except ValueError:
-         print("Error: "+str(addr)+" and "+str(GetData)+" create an incorrect result")
+      except ValueError as e:
+         print(f"Error: {e} \n\n"+str(addr)+" and "+str(GetData)+" create an incorrect result")
       result = (len(data)<4)
       if result == True:
          break#continue
