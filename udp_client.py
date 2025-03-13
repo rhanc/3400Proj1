@@ -10,7 +10,7 @@ def runClient(seqNum, text,data):
     addr = (HOST,PORT)
     client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
     client.settimeout(ACKTime)
-    client.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR)
+    #client.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR)
     client.bind((HOST,PORT))
     seqNum = 0
     ACKData = ""
